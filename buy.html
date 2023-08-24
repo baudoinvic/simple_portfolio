@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <title>myporofolio|</title>
+</head>
+<body>
+
+     <style>
+       
+       .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+        }
+        .social-login button {
+            padding: 10px;
+            flex-grow: 1;
+            margin-right: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .create-account-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+     </style>
+
+
+    <div class="header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="porto.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="buy-now"><a href="buy.html">Buy now</a></li>
+            </ul>
+            <img src="baudoin.jpeg" alt="Logo" class="logo">
+        </nav>
+    </div>
+    
+    <div class="container">
+        <h2>Create Acoount</h2>
+        <div class="social-login">
+            <button><i class="fab fa-google"></i> Continue with Google</button>
+            <button><i class="fab fa-apple"></i> Continue with Apple</button>
+            <button><i class="fab fa-facebook"></i> Continue with Facebook</button>
+        </div>
+        <form action="your_server_script.php" method="POST">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="create-account-button">Create Account</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
