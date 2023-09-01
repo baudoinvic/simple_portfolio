@@ -4,27 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
      <link rel="stylesheet" href="style.css">
+    
     <title>myporofolio|</title>
 </head>
+
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init("iGJ2mgQS7muDdRbcY");
+})();
+</script>
+
+
+
 <body>
     
     <div class="header">
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="buy-now"><a href="buy.html">Buy now</a></li>
+                <!-- <li class="buy-now"><a href="buy.html">Buy now</a></li> -->
             </ul>
             <img src="baudoin.jpeg" alt="Logo" class="logo">
-            <h2 style="margin-left: 16%; margin-top: -4.5%;">Baudoin</h2>
+            <h2 style="margin-left: 16%; margin-top: -3.5%;">Baudoin</h2>
         </nav>
     </div>
 
@@ -39,7 +53,7 @@
             <h1 style="padding-left: 7%; opacity: 0.65;  color:  #FF014F" id="typewriter"></h1>
             <p class="description">I'm a software developer experienced in frontend development
              and UI/UX design. I like to make a good user interface that is attractive to everyone, 
-            especially to my customers.</p>
+            especially for companies to my customers.</p>
             <h2 style="padding-left: 7%;">FIND ME WITH</h2>
              
             <a style="padding-left: 7%; color: #3c3e41;" href="https://www.facebook.com/boduein.bolingo/"><i data-feather="facebook"></i></a>
@@ -89,7 +103,7 @@
                         good comm unication skillls.
                         also help people to always 
                         having a good network
-                       every day and every time</p>
+                       </p>
                 </div>
                 <div class="item">
                     <i class="fas fa-bullhorn"></i>
@@ -123,42 +137,64 @@
         <h1>My Portfolio</h1>
     </div>
     
+
+    <div class="filter-buttons">
+        <button onclick="filterSelection('all')">All</button>
+        <button onclick="filterSelection('game')">Game</button>
+        <button onclick="filterSelection('ecommerce')">E-commerce</button>
+        <button onclick="filterSelection('music')">Music</button>
+        <button onclick="filterSelection('workout')">Workout</button>
+        <button onclick="filterSelection('food')">Food</button>
+        <button onclick="filterSelection('web')">Web Design</button>
+    </div>
+
+
+
     <div class="myporofolio">
         <div class="Portfolio">
             <div class="portfolio-grid">
-                <div class="porto">
+
+                <div class="porto game">
                    <img src="/images/portfolio-05.jpg">
                     <p>Game App</p>
                     <h4>this is my Game app which is use to help people to play games over the internet</h4>
+                   
+
                 </div>
-                <div class="porto">
+                <div class="porto ecommerce">
                     <img src="/images/portfolio-06.jpg">
                     <p>E-commerce</p>
                     <h4>this app helps people to buy the commanded foods online and get it at home</h4>
+                  
+
                 </div>
-                <div class="porto">
+                <div class="porto music">
                     <img src="/images/portfolio-1.jpg">
                     <p>Music App</p>
                     <h4>i built this app to help people to listen their favorite music easily everywhere</h4>
                 </div>
-                <div class="porto">
+                <div class="porto workout">
                     <img src="/images/portfolio-04.jpg">
                     <p>Workout app</p>
                     <h4>the aim of it is to pay the ticket of<br> gym online quickly and get it easily</h4>
                 </div>
-                <div class="porto">
+                <div class="porto food">
                     <img src="/images/portfolio-02.jpg">
                     <p>food app</p>
                     <h4>this app is used to purchace the food over internet and choose what you prefer</h4>
                 </div>
-                <div class="porto">
+                <div class="porto web ">
                     <img src="/images/portfolio-03.jpg">
                     <p>web design</p>
                     <h4>Better design for technology</h4>
                 </div>
+               
             </div>
         </div>
     </div>
+      <div class="visit">
+      <li><a href="todo.html" class="view-button">View my todo-list-app</a></li>
+</div>
 </section>
         
    <!------End of portfolio------->
@@ -283,17 +319,17 @@
                 <div class="porto">
                     <img src="/images/blog-01.jpg">
                     <p>Reading Books</p>
-                    <h2>Read a lot many times and stay focus.well  </h2>
+                    <h4>Read a lot many times and stay focus.well  </h4>
                 </div>
                 <div class="porto">
                     <img src="/images/blog-02.jpg">
                     <p>Meditation</p>
-                    <h2>Trying to meditate as long as you can</h2>
+                    <h4>Trying to meditate as long as you can</h4>
                 </div>
                 <div class="porto">
                     <img src="/images/blog-03.jpg">
                     <p>Communication</p>
-                    <h2>Communication is better & app maintain</h2>
+                    <h4>Communication is better & app maintain</h4>
                 </div>
             </div>
         </div>
@@ -307,7 +343,7 @@
         <h1>Contact With me</h1>
     </div>
    
-    <form>
+    <form onsubmit=" validateForm()">
         <div class="contact-form">
           <!-- Left column for contact information -->
           <div class="contact-info">
@@ -326,14 +362,14 @@
       
           <!-- Right column for the form elements -->
           <div class="col-2">
-            <label for="contact-phone">Phone Number</label>
-            <input class="form-control" name="contact-phone" id="contact-phone" type="text">
+            <label for="contact-phone">Enter your name</label>
+            <input class="form-control" name="contact-phone" id="contact-name" type="text" required>
             
             <label for="contact-email">Email</label>
-            <input class="form-control form-control-sm" id="contact-email" name="contact-email" type="email">
+            <input class="form-control form-control-sm" id="contact-email" name="contact-email" type="email" required>
             
             <label for="subject">Subject</label>
-            <input class="form-control form-control-sm" id="subject" name="subject" type="text">
+            <input class="form-control form-control-sm" id="subject" name="subject" type="text" required>
       
             <label for="contact-message">Your Message</label>
             <textarea name="contact-message" id="contact-message" cols="30" rows="10"></textarea>
@@ -345,53 +381,52 @@
           </div>
         </div>
       </form>
+      
       <h2 style="text-align: center;">© 2022. All rights reserved by Baudoin theme</h2>
   
     </section>
 
-       <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-         anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+      <script>
+        
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+   e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+   const targetId = this.getAttribute('href').substring(1);
+   const targetElement = document.getElementById(targetId);
 
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
+   if (targetElement) {
+       window.scrollTo({
+           top: targetElement.offsetTop,
+           behavior: 'smooth'
+       });
+   }
+});
 });
 
 
-  // script.js
+// script.js
 const text = "I'm Baudoin Bolingo  software developer";
 const typewriter = document.getElementById('typewriter');
 
 let i = 0;
 
 function typeWriter() {
-    if (i < text.length) {
-        typewriter.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100); // Adjust the typing speed here
-    }
+if (i < text.length) {
+   typewriter.innerHTML += text.charAt(i);
+   i++;
+   setTimeout(typeWriter, 100); // Adjust the typing speed here
+}
 }
 
-   typeWriter();
+typeWriter();
 
 
-    feather.replace();
+feather.replace();
 
+      
 
-       
-
-
-
-     </script>
+      </script>
   
       
 </body>
