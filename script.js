@@ -16,39 +16,78 @@ function filterSelection(category) {
     }
 }
 
- /*what i do */
-
-const tabs = document.querySelectorAll('.item ');
-tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-        tabs.forEach((tab) => tab.classList.remove('active'));
-        tab.classList.add('active');
-    });
-});
+ /*email validation*/
 
 
+ const form = document.getElementById('form');
+ const username = document.getElementById('username');
+ const email = document.getElementById('email');
+ const password = document.getElementById('password');
+ const password2 = document.getElementById('message');
+ 
+ form.addEventListener('submit', e => {
+     e.preventDefault();
+ 
+     validateInputs();
+ });
+ 
+ const setError = (element, message) => {
+     const inputControl = element.parentElement;
+     const errorDisplay = inputControl.querySelector('.error');
+ 
+     errorDisplay.innerText = message;
+     inputControl.classList.add('error');
+     inputControl.classList.remove('success')
+ }
+ 
+ const setSuccess = element => {
+     const inputControl = element.parentElement;
+     const errorDisplay = inputControl.querySelector('.error');
+ 
+     errorDisplay.innerText = '';
+     inputControl.classList.add('success');
+     inputControl.classList.remove('error');
+ };
+ 
+ const isValidEmail = email => {
+     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     return re.test(String(email).toLowerCase());
+ }
+ 
+ const validateInputs = () => {
+     const usernameValue = username.value.trim();
+     const emailValue = email.value.trim();
+     const passwordValue = password.value.trim();
+     const password2Value = password2.value.trim();
+ 
+     if(usernameValue === '') {
+         setError(username, 'Username is required');
+     } else {
+         setSuccess(username);
+     }
+ 
+     if(emailValue === '') {
+         setError(email, 'Email is required');
+     } else if (!isValidEmail(emailValue)) {
+         setError(email, 'Provide a valid email address');
+     } else {
+         setSuccess(email);
+     }
+ 
+     if(passwordValue === '') {
+         setError(password, 'Password is required');
+     } else if (passwordValue.length < 8 ) {
+         setError(password, 'Password must be at least 8 character.')
+     } else {
+         setSuccess(password);
+     }
+ 
+     
+ 
+ };
+ 
 
-/*sending emai */
 
-function sendMail() {
-    var params = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
-  
-    const serviceID = "service_7hx56ka";
-    const templateID = "template_tppy2d4";
-  
-      emailjs.send(serviceID, templateID, params)
-      .then(res=>{
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
-          console.log(res);
-          alert("Your message sent successfully!!")
-  
-      })
-      .catch(err=>console.log(err));
-  
-  }
+
+/*send email */
+

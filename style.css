@@ -33,23 +33,6 @@ body{
     font-size: 15.2px;
 } 
 
-.buy-now {
-    background-color: #e2e8ec; 
-    padding: 7px 10px; 
-    border: none; 
-    border-radius: 5px; 
-    font-size: 16px; 
-    cursor: pointer;  
-}
-
-li.buy-now a {
-    color: #f9004d !important; 
-}
-
-
-.buy-now:hover {
-    background-color: #ff8c66; /* Change color on hover */
-}
 
 .logo {
     width: 75px;
@@ -76,6 +59,8 @@ li.buy-now a {
     height: auto;
    
 }
+
+
 
 
 /*about-me*/
@@ -219,7 +204,7 @@ li.buy-now a {
 }
 
 .filter-buttons button:hover {
-    background-color: #555;
+    background-color: white;
 }
 
 /*button for todolist*/
@@ -422,17 +407,241 @@ h2 {
   
   }
 
-  .invalid-input {
-    border: 2px solid red;
-  }
+  .input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
   
-  /*todolist app*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ /*responsiveness */
+
+ /* Media query for responsive design */
+
+   /* header */
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        height: 16%;
+    }
+
+    .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+     
+    .body{
+        margin: 0;
+    }
+
+
+    .header {
+        padding: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+     
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-top: -3rem;
+    }
+}
+
+
+/* Media query for responsive design */
+
+ /*about me */
+  
+@media screen and (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        text-align: center; 
+    }
+
+    .text {
+        max-width: 55%; 
+    }
+     .text p{
+       margin: auto;
+       padding-left: 15%;
+       text-align: left;
+     }
+
+    .profile-image {
+        width: 250px; 
+        height: 250px;
+        margin-bottom: 20px; 
+    }
+    
+    .text h1 {
+        padding-left: 15% !important;
+        text-align: left;
+    }
+    
+    .text h2 {
+        text-align: left;
+        padding-left: 15% !important;
+    }
+
+     .a {
+      padding-right: 5%;
+    }
+}
     
 
 
-  
+  /*what i do */
+
+  @media screen and (max-width: 768px) {
+    .feature {
+        padding-left: 25%; 
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .item {
+       
+        text-align: center; 
+    }
+
+    .item i {
+       font-weight: 1px;
+    }
+}
+
+   /*my portfolio */
+    
+     /* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .porto {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        text-align: center; 
+    }
+
+    .porto p {
+        padding-right: 35% !important;
+        padding: 10px; 
+    }
+   
+     .visit h3{
+        width: 50%;
+        padding-left: 23%;
+       
+     }
+
+
+
+    .porto h4 {
+       padding-left: 26%;
+       width: 50%;
+    }
+}
+
+ /*filter button */
+
+   /* Media query for responsiveness of filter buttons */
+@media screen and (max-width: 768px) {
+    .filter-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .filter-buttons button {
+        width: 100px;
+        height: 50px;
+        margin: 5px 0;
+    }
+}
+
+  /*experience */
+
+    /* Media query for responsiveness of experience section */
+@media screen and (max-width: 768px) {
+    .experience {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+
+    .experience-item p{
+        width: 50%;
+    }
+
+    .experience-item {
+        width: 80%; 
+        margin-right: 0; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+}
+
+/*contact form */
+
+@media screen and (max-width: 768px) {
+    .contact-form {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .contact-info {
+        height: auto; 
+        margin-bottom: 20px; 
+    }
+
+    .contact-form .col-2 {
+        width: 70%; 
+        padding: 0; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
   
 

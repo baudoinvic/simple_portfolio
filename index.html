@@ -13,15 +13,6 @@
 </head>
 
 
-<script type="text/javascript"
-src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-(function(){
-emailjs.init("iGJ2mgQS7muDdRbcY");
-})();
-</script>
-
 
 
 <body>
@@ -132,14 +123,15 @@ emailjs.init("iGJ2mgQS7muDdRbcY");
         
    <!------portfolio------->
      <section id="portfolio">
-    <div class="visit">
+
+       <div class="visit">
         <h3>VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK</h3>
         <h1>My Portfolio</h1>
     </div>
     
 
     <div class="filter-buttons">
-        <button onclick="filterSelection('all')">All</button>
+        <button style="color: #FF014F;" onclick="filterSelection('all')">All</button>
         <button onclick="filterSelection('game')">Game</button>
         <button onclick="filterSelection('ecommerce')">E-commerce</button>
         <button onclick="filterSelection('music')">Music</button>
@@ -147,8 +139,6 @@ emailjs.init("iGJ2mgQS7muDdRbcY");
         <button onclick="filterSelection('food')">Food</button>
         <button onclick="filterSelection('web')">Web Design</button>
     </div>
-
-
 
     <div class="myporofolio">
         <div class="Portfolio">
@@ -308,28 +298,33 @@ emailjs.init("iGJ2mgQS7muDdRbcY");
                 <style>
                     .porto {
                         margin-right: 20px; 
+
+                    }
+
+                    .porto h5{
+                        font-size: 18px;
+                       
+                        margin-top: -5px;
                     }
     
                     
-                    .porto:last-child {
-                        margin-right: 0;
-                    }
+                    
                 </style>
     
                 <div class="porto">
                     <img src="/images/blog-01.jpg">
                     <p>Reading Books</p>
-                    <h4>Read a lot many times and stay focus.well  </h4>
+                    <h5>Read a lot many times and stay focus.well  </h5>
                 </div>
                 <div class="porto">
                     <img src="/images/blog-02.jpg">
                     <p>Meditation</p>
-                    <h4>Trying to meditate as long as you can</h4>
+                    <h5>Trying to meditate as long as you can</h5>
                 </div>
                 <div class="porto">
                     <img src="/images/blog-03.jpg">
                     <p>Communication</p>
-                    <h4>Communication is better & app maintain</h4>
+                    <h5>Communication is better & app maintain</h5>
                 </div>
             </div>
         </div>
@@ -343,7 +338,7 @@ emailjs.init("iGJ2mgQS7muDdRbcY");
         <h1>Contact With me</h1>
     </div>
    
-    <form onsubmit=" validateForm()">
+    <form id="form" action="/">
         <div class="contact-form">
           <!-- Left column for contact information -->
           <div class="contact-info">
@@ -362,20 +357,24 @@ emailjs.init("iGJ2mgQS7muDdRbcY");
       
           <!-- Right column for the form elements -->
           <div class="col-2">
-            <label for="contact-phone">Enter your name</label>
-            <input class="form-control" name="contact-phone" id="contact-name" type="text" required>
-            
-            <label for="contact-email">Email</label>
+            <label for="name">Enter your name</label>
+            <input class="form-control" name="contact-name" id="contact-name" type="text" required>
+            <div class="error"></div>
+
+            <label for="email">Email</label>
             <input class="form-control form-control-sm" id="contact-email" name="contact-email" type="email" required>
-            
-            <label for="subject">Subject</label>
-            <input class="form-control form-control-sm" id="subject" name="subject" type="text" required>
-      
-            <label for="contact-message">Your Message</label>
+             <div class="error"></div>
+
+            <label for="password">password</label>
+            <input class="form-control form-control-sm" id="password" name="password" type="password" required>
+               <div class="error"></div>
+
+            <label for="message">Your Message</label>
             <textarea name="contact-message" id="contact-message" cols="30" rows="10"></textarea>
-      
+              <div class="error"></div>
+
             <button name="submit" type="submit" id="submit" class="rn-btn">
-              <span>SEND MESSAGE</span>
+              <span onclick="sendMail()">SEND MESSAGE</span>
               <i data-feather="arrow-right"></i>
             </button>
           </div>
@@ -423,6 +422,12 @@ typeWriter();
 
 
 feather.replace();
+
+        
+
+
+
+
 
       
 
