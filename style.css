@@ -459,7 +459,7 @@ h2 {
 
     .header {
         padding: 0.5rem;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
      
     }
@@ -467,7 +467,6 @@ h2 {
     .logo {
         width: 50px;
         height: 50px;
-        margin-top: -3rem;
     }
 }
 
@@ -507,12 +506,14 @@ h2 {
         padding-left: 15% !important;
     }
 
-     .a {
-      padding-right: 5%;
-    }
 }
     
-
+@media (min-width: 768px) {
+    .about-me .a {
+      padding-right: 70%; 
+    
+    }
+  }
 
   /*what i do */
 
@@ -535,6 +536,7 @@ h2 {
     }
    
 }
+   
 
 
 
@@ -562,14 +564,21 @@ h2 {
         padding-left: 23%;
        
      }
-
-
-
+    
     .porto h4 {
        padding-left: 26%;
        width: 50%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .view-button {
+        width: 30% !important;
+        margin-right: 0 !important;
+        margin-top: 10px !important;
+    }
+}
+
 
  /*filter button */
 
